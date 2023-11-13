@@ -37,7 +37,7 @@ RUN apt-get update \
             xz-utils \
             zstd \
     && apt-get autoremove --purge -y \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && locale-gen en_US.UTF-8
 
-RUN locale-gen en_US.UTF-8
 
