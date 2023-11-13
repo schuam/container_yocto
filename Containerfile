@@ -4,6 +4,7 @@ ARG BASE_IMAGE=${BASE_OS}:${BASE_OS_VERSION}
 
 FROM ${BASE_IMAGE}
 
+ARG YOCTO_RELEASE=kirkstone
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
@@ -40,4 +41,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && locale-gen en_US.UTF-8
 
+RUN git clone -b ${YOCTO_RELEASE} git://git.yoctoproject.org/poky.git /poky
 
+WORKDIR /poky
+RUN git pull origin
