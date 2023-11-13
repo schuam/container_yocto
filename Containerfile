@@ -6,35 +6,36 @@ FROM ${BASE_IMAGE}
 
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-        gawk \
-        wget \
-        git \
-        diffstat \
-        unzip \
-        texinfo \
-        gcc \
-        build-essential \
-        chrpath \
-        socat \
-        cpio \
-        python3 \
-        python3-pip \
-        python3-pexpect \
-        xz-utils \
-        debianutils \
-        iputils-ping \
-        python3-git \
-        python3-jinja2 \
-        libegl1-mesa \
-        libsdl1.2-dev \
-        python3-subunit \
-        mesa-common-dev \
-        zstd \
-        liblz4-tool \
-        file \
-        locales \
-        libacl1 \
+    && DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
+        apt-get install -y --no-install-recommends \
+            build-essential \
+            chrpath \
+            cpio \
+            debianutils \
+            diffstat \
+            file \
+            gawk \
+            gcc \
+            git \
+            iputils-ping \
+            libacl1 \
+            libegl1-mesa \
+            liblz4-tool \
+            libsdl1.2-dev \
+            locales \
+            mesa-common-dev \
+            python3 \
+            python3-git \
+            python3-jinja2 \
+            python3-pexpect \
+            python3-pip \
+            python3-subunit \
+            socat \
+            texinfo \
+            unzip \
+            wget \
+            xz-utils \
+            zstd \
     && apt-get autoremove --purge -y \
     && rm -rf /var/lib/apt/lists/*
 
