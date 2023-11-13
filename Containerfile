@@ -45,3 +45,7 @@ RUN git clone -b ${YOCTO_RELEASE} git://git.yoctoproject.org/poky.git /poky
 
 WORKDIR /poky
 RUN git pull origin
+
+VOLUME [ "/workdir" ]
+WORKDIR /workdir
+
