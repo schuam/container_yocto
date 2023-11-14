@@ -52,7 +52,11 @@ RUN git clone -b ${YOCTO_RELEASE} git://git.yoctoproject.org/poky.git /poky
 WORKDIR /poky
 RUN git pull origin
 
+# Add user
+RUN useradd developer -m
+USER developer:developer
+
 # Setup a work directory
-VOLUME [ "/workdir" ]
-WORKDIR /workdir
+VOLUME [ "/home/developer/workdir" ]
+WORKDIR /home/developer/workdir
 
