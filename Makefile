@@ -8,7 +8,7 @@ BASE_OS_VERSION := 22.04
 IMAGE_FILE := Containerfile
 IMAGE_NAME := schuam/yocto
 
-IBT := podman    # IBT stands for "image build tool"
+IBT := docker    # IBT stands for "image build tool"
 GIT := git
 
 YOCTO_RELEASE := kirkstone
