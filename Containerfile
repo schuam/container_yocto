@@ -38,6 +38,7 @@ RUN apt-get update \
             socat \
             texinfo \
             unzip \
+            vim \
             wget \
             xz-utils \
             zstd \
