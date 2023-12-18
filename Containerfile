@@ -20,6 +20,7 @@ RUN apt-get update \
             gcc \
             git \
             iputils-ping \
+            less \
             libacl1 \
             libegl1-mesa \
             liblz4-tool \
@@ -34,6 +35,7 @@ RUN apt-get update \
             python3-subunit \
             socat \
             texinfo \
+            tmux \
             unzip \
             vim \
             wget \
