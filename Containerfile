@@ -46,7 +46,7 @@ RUN apt-get update \
     && locale-gen en_US.UTF-8
 
 # Add user
-RUN useradd developer -m
+RUN useradd developer -m -s /bin/bash
 USER developer:developer
 
 # Setup a work directory
