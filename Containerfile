@@ -6,9 +6,6 @@ ARG BASE_IMAGE=${BASE_OS}:${BASE_OS_VERSION}
 # Load base image
 FROM ${BASE_IMAGE}
 
-# Set the desired Yocto release (must be lower case)
-ARG YOCTO_RELEASE=kirkstone
-
 # Install required packages
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
@@ -45,13 +42,6 @@ RUN apt-get update \
     && apt-get autoremove --purge -y \
     && rm -rf /var/lib/apt/lists/* \
     && locale-gen en_US.UTF-8
-
-# Install yocto
-RUN git clone -b ${YOCTO_RELEASE} git://git.yoctoproject.org/poky.git /poky
-
-# Update yocto/poky
-WORKDIR /poky
-RUN git pull origin
 
 # Add user
 RUN useradd developer -m
