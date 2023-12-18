@@ -11,7 +11,6 @@ IMAGE_NAME := schuam/yocto
 IBT := docker    # IBT stands for "image build tool"
 GIT := git
 
-YOCTO_RELEASE := kirkstone
 
 # -----------------------------------------------------------------------------
 # targets
@@ -43,12 +42,9 @@ image:
 		-f $(IMAGE_FILE) \
 		-t $(IMAGE_NAME):latest \
 		-t $(IMAGE_NAME):$(BASE_OS)-latest \
-		-t $(IMAGE_NAME):$(YOCTO_RELEASE) \
-		-t $(IMAGE_NAME):$(YOCTO_RELEASE)-$(BASE_OS)-$(BASE_OS_VERSION) \
 		-t $(IMAGE_NAME):$(shell date '+%Y-%m-%d') \
 		-t $(IMAGE_NAME):`$(GIT) describe --tags --dirty --always` \
 		--build-arg BASE_OS=$(BASE_OS) \
 		--build-arg BASE_OS_VERSION=$(BASE_OS_VERSION) \
-		--build-arg YOCTO_RELEASE=$(YOCTO_RELEASE) \
 		.
 
