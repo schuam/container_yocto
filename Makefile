@@ -37,7 +37,7 @@ help: Makefile
 	@echo ""
 
 
-## image: Build the podman image
+## image: Build the container image
 image:
 	$(IBT) build \
 		-f $(IMAGE_FILE) \
