@@ -5,11 +5,12 @@
 BASE_OS := ubuntu
 BASE_OS_VERSION := 22.04
 
-IMAGE_FILE := Containerfile
-IMAGE_NAME := schuam/yocto
-
-IBT := docker    # IBT stands for "image build tool"
+# IBT stands for "image build tool"
+IBT := docker
 GIT := git
+
+IMAGE_FILE := Containerfile
+IMAGE_NAME := schuam/${IBT}_yocto
 
 
 # -----------------------------------------------------------------------------
